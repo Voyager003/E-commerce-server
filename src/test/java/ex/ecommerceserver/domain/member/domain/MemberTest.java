@@ -40,13 +40,13 @@ class MemberTest {
             Member googleMember = Member.createOAuthMember(
                     "google@gmail.com", "구글유저", OAuth2Provider.GOOGLE, "google123"
             );
-            Member kakaoMember = Member.createOAuthMember(
-                    "kakao@kakao.com", "카카오유저", OAuth2Provider.KAKAO, "kakao456"
+            Member githubMember = Member.createOAuthMember(
+                    "github@github.com", "깃허브유저", OAuth2Provider.GITHUB, "github456"
             );
 
             // then
             assertThat(googleMember.getProvider()).isEqualTo(OAuth2Provider.GOOGLE);
-            assertThat(kakaoMember.getProvider()).isEqualTo(OAuth2Provider.KAKAO);
+            assertThat(githubMember.getProvider()).isEqualTo(OAuth2Provider.GITHUB);
         }
     }
 
