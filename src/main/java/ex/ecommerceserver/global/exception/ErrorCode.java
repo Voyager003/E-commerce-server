@@ -29,7 +29,13 @@ public enum ErrorCode {
     INVALID_PRICE(HttpStatus.BAD_REQUEST, "P005", "가격이 유효하지 않습니다"),
     INVALID_STOCK(HttpStatus.BAD_REQUEST, "P006", "재고 수량이 유효하지 않습니다"),
     INSUFFICIENT_STOCK(HttpStatus.BAD_REQUEST, "P007", "재고가 부족합니다"),
-    CANNOT_ACTIVATE_DISCONTINUED_PRODUCT(HttpStatus.BAD_REQUEST, "P008", "판매 중단된 상품은 활성화할 수 없습니다");
+    CANNOT_ACTIVATE_DISCONTINUED_PRODUCT(HttpStatus.BAD_REQUEST, "P008", "판매 중단된 상품은 활성화할 수 없습니다"),
+
+    // Cart
+    CART_NOT_FOUND(HttpStatus.NOT_FOUND, "CA001", "장바구니를 찾을 수 없습니다"),
+    CART_ITEM_NOT_FOUND(HttpStatus.NOT_FOUND, "CA002", "장바구니 항목을 찾을 수 없습니다"),
+    INVALID_QUANTITY(HttpStatus.BAD_REQUEST, "CA003", "유효하지 않은 수량입니다"),
+    CART_ITEM_ALREADY_EXISTS(HttpStatus.CONFLICT, "CA004", "이미 장바구니에 있는 상품입니다");
 
     private final HttpStatus status;
     private final String code;
