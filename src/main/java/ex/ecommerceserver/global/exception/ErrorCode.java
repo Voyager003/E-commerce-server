@@ -35,7 +35,15 @@ public enum ErrorCode {
     CART_NOT_FOUND(HttpStatus.NOT_FOUND, "CA001", "장바구니를 찾을 수 없습니다"),
     CART_ITEM_NOT_FOUND(HttpStatus.NOT_FOUND, "CA002", "장바구니 항목을 찾을 수 없습니다"),
     INVALID_QUANTITY(HttpStatus.BAD_REQUEST, "CA003", "유효하지 않은 수량입니다"),
-    CART_ITEM_ALREADY_EXISTS(HttpStatus.CONFLICT, "CA004", "이미 장바구니에 있는 상품입니다");
+    CART_ITEM_ALREADY_EXISTS(HttpStatus.CONFLICT, "CA004", "이미 장바구니에 있는 상품입니다"),
+
+    // Order
+    ORDER_NOT_FOUND(HttpStatus.NOT_FOUND, "O001", "주문을 찾을 수 없습니다"),
+    ORDER_ITEM_NOT_FOUND(HttpStatus.NOT_FOUND, "O002", "주문 항목을 찾을 수 없습니다"),
+    INVALID_ORDER_STATUS(HttpStatus.BAD_REQUEST, "O003", "유효하지 않은 주문 상태입니다"),
+    ORDER_CANNOT_BE_CANCELLED(HttpStatus.BAD_REQUEST, "O004", "취소할 수 없는 주문입니다"),
+    EMPTY_ORDER_ITEMS(HttpStatus.BAD_REQUEST, "O005", "주문 항목이 비어있습니다"),
+    INVALID_ADDRESS(HttpStatus.BAD_REQUEST, "O006", "유효하지 않은 배송지 정보입니다");
 
     private final HttpStatus status;
     private final String code;
