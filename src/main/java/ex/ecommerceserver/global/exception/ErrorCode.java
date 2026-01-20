@@ -43,7 +43,16 @@ public enum ErrorCode {
     INVALID_ORDER_STATUS(HttpStatus.BAD_REQUEST, "O003", "유효하지 않은 주문 상태입니다"),
     ORDER_CANNOT_BE_CANCELLED(HttpStatus.BAD_REQUEST, "O004", "취소할 수 없는 주문입니다"),
     EMPTY_ORDER_ITEMS(HttpStatus.BAD_REQUEST, "O005", "주문 항목이 비어있습니다"),
-    INVALID_ADDRESS(HttpStatus.BAD_REQUEST, "O006", "유효하지 않은 배송지 정보입니다");
+    INVALID_ADDRESS(HttpStatus.BAD_REQUEST, "O006", "유효하지 않은 배송지 정보입니다"),
+
+    // Payment
+    PAYMENT_NOT_FOUND(HttpStatus.NOT_FOUND, "PM001", "결제 정보를 찾을 수 없습니다"),
+    PAYMENT_ALREADY_COMPLETED(HttpStatus.CONFLICT, "PM002", "이미 완료된 결제입니다"),
+    PAYMENT_ALREADY_CANCELLED(HttpStatus.CONFLICT, "PM003", "이미 취소된 결제입니다"),
+    PAYMENT_CANNOT_BE_CANCELLED(HttpStatus.BAD_REQUEST, "PM004", "취소할 수 없는 결제입니다"),
+    INVALID_PAYMENT_AMOUNT(HttpStatus.BAD_REQUEST, "PM005", "결제 금액이 유효하지 않습니다"),
+    PAYMENT_FAILED(HttpStatus.BAD_REQUEST, "PM006", "결제에 실패했습니다"),
+    ORDER_ALREADY_PAID(HttpStatus.CONFLICT, "PM007", "이미 결제된 주문입니다");
 
     private final HttpStatus status;
     private final String code;
